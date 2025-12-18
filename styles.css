@@ -13,7 +13,7 @@
     --glow-effect: 0 0 15px rgba(0, 188, 212, 0.5); /* Primary color glow */
 }
 
-/* Base Styles (Keep all previous base styles: *, body, header, hero-section, config-container, etc.) */
+/* Base Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -25,15 +25,345 @@ body {
     background-color: var(--secondary-color);
     color: var(--text-color);
     line-height: 1.6;
+    /* Futuristic circuit board/grid pattern background */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M 25 0 L 0 0 0 25" fill="none" stroke="%23333" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
     background-size: 100px 100px;
 }
 
-/* --- (Keep existing styles for .header, .hero-section, .config-container, .slider, .toggle, .pay-btn, .whatsapp-btn) --- */
+/* -------------------- 1. Header/Navigation -------------------- */
+.header {
+    background-color: var(--card-color);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-/* Only adding the new VPS services styles for brevity */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: var(--glow-effect);
+}
 
-/* VPS Services Section */
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    text-shadow: var(--glow-effect);
+}
+
+.search-icon i {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.search-icon i:hover {
+    color: var(--primary-color);
+}
+
+/* -------------------- 2. Hero Section -------------------- */
+.hero-section {
+    padding: 6rem 5%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('your-futuristic-background-image.jpg') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: inset 0 -5px 15px rgba(0, 188, 212, 0.2);
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: var(--glow-effect);
+    color: #fff;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* -------------------- 3. Hosting Config Container (Main Content) -------------------- */
+.main-content {
+    /* Ensures the main content starts below the hero section */
+    margin-bottom: 50px;
+}
+
+.config-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+.config-panel, .summary-panel {
+    background-color: var(--card-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--glow-effect);
+    flex: 1;
+    min-width: 45%;
+}
+
+.config-panel h2, .summary-panel h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+/* Resource Configuration */
+.resource-group {
+    margin-bottom: 25px;
+}
+
+.resource-group label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.slider-control {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.slider {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    height: 8px;
+    background: #555;
+    outline: none;
+    border-radius: 4px;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border: 3px solid var(--secondary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--glow-effect);
+}
+
+.value {
+    min-width: 80px;
+    text-align: right;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Unlimited Toggle Switch */
+.unlimited-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toggle {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background: #555;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle:checked {
+    background: var(--unlimited-toggle-bg);
+}
+
+.toggle::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle:checked::before {
+    transform: translateX(20px);
+}
+
+/* Payment Methods */
+.payment-methods {
+    margin-top: 40px;
+}
+
+.payment-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.pay-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+}
+
+.pay-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.jazzcash {
+    background-color: var(--jazzcash-color);
+}
+
+.easypaisa {
+    background-color: var(--easypaisa-color);
+}
+
+.account-info {
+    margin-top: 15px;
+    font-style: italic;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Pricing Summary */
+.summary-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.summary-details {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.summary-details p {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: var(--glow-effect);
+    margin-top: 10px;
+}
+
+.price span {
+    font-size: 2.5rem;
+}
+
+/* Receipt Upload */
+.receipt-upload {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.upload-box {
+    border: 2px dashed #555;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.upload-box:hover {
+    border-color: var(--primary-color);
+}
+
+.upload-icon {
+    font-size: 3rem;
+    color: #888;
+    display: block;
+    margin-bottom: 15px;
+}
+
+#receipt-file {
+    display: none; /* Hide the default file input */
+}
+
+.file-label {
+    background-color: #444;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.file-label:hover {
+    background-color: #555;
+}
+
+.whatsapp-prompt {
+    margin-bottom: 15px;
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--whatsapp-color);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-btn:hover {
+    background-color: #1EBE5A;
+    transform: translateY(-2px);
+}
+
+.whatsapp-note {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #ff9800; /* Amber/Warning color */
+}
+
+/* -------------------- 4. VPS Services Section -------------------- */
 .vps-services-section {
     padding: 60px 5%;
     max-width: 1200px;
@@ -135,4 +465,77 @@ body {
 .primary-vps:hover {
     background-color: #ffb74d;
     box-shadow: 0 0 15px rgba(255, 152, 0, 0.5);
+}
+
+/* -------------------- 5. Footer -------------------- */
+.footer {
+    background-color: var(--card-color);
+    padding: 20px 5%;
+    text-align: center;
+    border-top: 2px solid var(--primary-color);
+    margin-top: 50px;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    text-shadow: var(--glow-effect);
+}
+
+.footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* -------------------- 6. Media Queries for Responsiveness -------------------- */
+@media (max-width: 900px) {
+    .config-container {
+        flex-direction: column;
+    }
+
+    .config-panel, .summary-panel {
+        min-width: 100%;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav-links {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        margin: 5px 10px 5px 0;
+    }
+
+    .payment-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .slider-control {
+        flex-wrap: wrap;
+    }
+
+    .unlimited-option {
+        width: 100%;
+        justify-content: flex-end;
+    }
 }
