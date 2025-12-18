@@ -1,0 +1,138 @@
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #00bcd4; /* A light, futuristic blue/cyan */
+    --secondary-color: #1a1a1a; /* Dark background */
+    --card-color: #2c2c2c; /* Slightly lighter card background */
+    --text-color: #f0f0f0;
+    --unlimited-toggle-bg: #4caf50; /* Green for toggles */
+    --jazzcash-color: #4CAF50;
+    --easypaisa-color: #17A2B8;
+    --whatsapp-color: #25D366;
+    --glow-effect: 0 0 15px rgba(0, 188, 212, 0.5); /* Primary color glow */
+}
+
+/* Base Styles (Keep all previous base styles: *, body, header, hero-section, config-container, etc.) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M 25 0 L 0 0 0 25" fill="none" stroke="%23333" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
+    background-size: 100px 100px;
+}
+
+/* --- (Keep existing styles for .header, .hero-section, .config-container, .slider, .toggle, .pay-btn, .whatsapp-btn) --- */
+
+/* Only adding the new VPS services styles for brevity */
+
+/* VPS Services Section */
+.vps-services-section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.vps-services-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-shadow: var(--glow-effect);
+    margin-bottom: 10px;
+}
+
+.vps-services-section p {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+.vps-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.vps-card {
+    background-color: var(--card-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 188, 212, 0.1);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.vps-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.vps-card h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.vps-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.vps-card ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.vps-card ul li i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.vps-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--unlimited-toggle-bg);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.order-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--card-color);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.order-btn:hover {
+    background-color: #00e5ff;
+    box-shadow: var(--glow-effect);
+}
+
+.primary-vps { /* Highlight for the most powerful VPS */
+    background-color: #ff9800; /* Amber/Orange */
+    color: #1a1a1a;
+}
+
+.primary-vps:hover {
+    background-color: #ffb74d;
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.5);
+}
